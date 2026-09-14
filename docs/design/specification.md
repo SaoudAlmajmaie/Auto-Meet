@@ -163,7 +163,6 @@ Once this specification is approved:
 
 
 ---
-
 ## 9. Approval
 
 | Role | Name | Date | Signed off? |
