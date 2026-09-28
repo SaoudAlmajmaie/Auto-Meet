@@ -6,7 +6,7 @@
 
 | ID | Task | Traces to (R# / ADR#) | Depends on | Status |
 |----|------|--------------------------|------------|--------|
-| T1 | Review the existing template application and identify reusable components, layouts, navigation, and styling that can support the AutoMeet prototype | ADR-00, ADR-01 | — | Not started |
+| T1 | Review the existing template application and identify reusable components, layouts, navigation, and styling that can support the AutoMeet prototype | ADR-00, ADR-01 | — | Done |
 | T2 | Adapt the existing template branding, layout, and interface so the application clearly represents AutoMeet | ADR-01, R3, R4 | T1 | Not started |
 | T3 | Adapt the placeholder data model to support the required car-show information: title, date, time, location, description, image, and event type/category where relevant | ADR-00, R3, R4 | T1 | Not started |
 | T4 | Add realistic placeholder car-show data for use across the front-end prototype | R3, R4 | T3 | Not started |
@@ -23,6 +23,13 @@
 | T15 | Compare the completed front-end prototype to the specification and resolve any missing or inconsistent requirements before moving to backend integration | R1, R2, R3, R4, R5, R6, R7, R8, R9, ADR-00, ADR-01, ADR-02, ADR-03 | T13, T14 | Not started |
 
 **Status values:** Not started · In progress · Done · Blocked
+
+## T1 Review — 2026-09-28
+
+- **Reusable components:** The landing, collection, and item-detail views in `components/` provide starting points for event discovery and event details. The collection view already has image cards, category badges, descriptions, locations, and loading/error/empty states. The detail view handles selected-item lookup and a not-found state. The navbar is a reusable shared component; the About view is only a template page.
+- **Reusable layout and navigation:** `index.html` supplies a full-height app shell with a sticky shared navbar, main content region, and router view. `app.js` defines hash-based routes for home, collection, item detail, and About. Bootstrap's responsive grid supports the collection cards.
+- **Reusable styling:** `index.html` loads Bootstrap 5 and Bootstrap Icons. Existing utility classes cover containers, spacing, cards, buttons, badges, and responsive layout. `style.css` provides fixed collection/detail image sizing and collection-description clamping. The template's current Bootstrap blue/light appearance is not yet aligned with the AutoMeet palette and component rules in the design system.
+- **Gaps for later tasks:** The CSV model and loader in `app.js` support id, name, description, category, image URL, and location, but not event date or time required for car-show information. The starter has no signup/login, user session, RSVP action, duplicate-registration handling, or registered-events view. Its Vue 3/Vue Router implementation also differs from the HTML/CSS/JavaScript stack stated in ADR-01, so that decision should be reconciled during implementation planning. These are follow-up gaps, not blockers to reviewing the template.
 
 ## Definition of Done (applies to every task)
 - Matches its linked requirement's acceptance criteria in the specification.
