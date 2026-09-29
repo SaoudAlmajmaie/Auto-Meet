@@ -8,7 +8,7 @@
 |----|------|--------------------------|------------|--------|
 | T1 | Review the existing template application and identify reusable components, layouts, navigation, and styling that can support the AutoMeet prototype | ADR-00, ADR-01 | — | Done |
 | T2 | Adapt the existing template branding, layout, and interface so the application clearly represents AutoMeet | ADR-01, R3, R4 | T1 | Done |
-| T3 | Adapt the placeholder data model to support the required car-show information: title, date, time, location, description, image, and event type/category where relevant | ADR-00, R3, R4 | T1 | Not started |
+| T3 | Adapt the placeholder data model to support the required car-show information: title, date, time, location, description, image, and event type/category where relevant | ADR-00, R3, R4 | T1 | Done |
 | T4 | Add realistic placeholder car-show data for use across the front-end prototype | R3, R4 | T3 | Not started |
 | T5 | Adapt the main event listing view so users can browse available car shows in a clean, scannable layout | R3 | T2, T4 | Not started |
 | T6 | Ensure each event listing clearly displays the title, date, location, and image for quick browsing decisions | R3, R4 | T5 | Not started |

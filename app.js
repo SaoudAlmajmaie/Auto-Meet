@@ -52,14 +52,23 @@ const app = Vue.createApp({
               itemsStore.error = 'There was a problem reading the CSV data.';
               itemsStore.items = [];
             } else {
-              itemsStore.items = data.map((row) => ({
-                id: String(row.id || '').trim(),
-                name: String(row.name || '').trim(),
-                description: String(row.description || '').trim(),
-                category: String(row.category || '').trim(),
-                imageUrl: String(row.image_url || '').trim(),
-                location: String(row.location || '').trim(),
-              }));
+              itemsStore.items = data.map((row) => {
+                const title = String(row.title || row.name || '').trim();
+                const image = String(row.image || row.image_url || '').trim();
+
+                return {
+                  id: String(row.id || '').trim(),
+                  title,
+                  date: String(row.date || '').trim(),
+                  time: String(row.time || '').trim(),
+                  location: String(row.location || '').trim(),
+                  description: String(row.description || '').trim(),
+                  image,
+                  category: String(row.category || '').trim(),
+                  name: title,
+                  imageUrl: image,
+                };
+              });
               itemsStore.error = '';
             }
             itemsStore.isLoading = false;
