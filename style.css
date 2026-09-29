@@ -264,16 +264,130 @@ main {
   box-shadow: 0 2px 8px rgb(31 41 55 / 5%);
 }
 
-.collection-card-image {
-  height: 200px;
+.discover-page {
+  padding-top: 32px !important;
+  padding-bottom: 48px !important;
 }
 
-.collection-description {
+.discover-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--am-border);
+}
+
+.discover-count {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 8px;
+  flex: 0 0 auto;
+  padding: 8px 12px;
+  border: 1px solid var(--am-border);
+  border-radius: var(--am-radius);
+  background: var(--am-surface);
+  color: var(--am-muted);
+  font-size: 14px;
+}
+
+.discover-count strong {
+  color: var(--am-primary);
+  font-size: 18px;
+}
+
+.discover-grid > [class*="col-"] {
+  display: flex;
+}
+
+.show-card {
+  width: 100%;
+  overflow: hidden;
+}
+
+.show-card-image {
+  width: 100%;
+  aspect-ratio: 8 / 5;
+  background: #e8edf2;
+  color: var(--am-muted);
+}
+
+.show-card-body {
+  padding: 16px;
+}
+
+.show-card-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 56px;
+  margin-bottom: 12px;
+}
+
+.show-card-title {
   display: -webkit-box;
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.show-card-category {
+  flex: 0 0 auto;
+  max-width: 46%;
+  white-space: normal;
+  text-align: center;
+}
+
+.show-card-description {
+  display: -webkit-box;
+  min-height: 72px;
+  margin-bottom: 16px;
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   line-clamp: 3;
+}
+
+.show-card-location {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-height: 48px;
+  margin: 0 0 16px;
+  padding-top: 12px;
+  border-top: 1px solid var(--am-border);
+  color: var(--am-muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.show-card-location > i {
+  margin-top: 2px;
+  color: var(--am-secondary);
+  font-size: 16px;
+}
+
+.show-card-location span {
+  display: grid;
+  gap: 2px;
+  overflow-wrap: anywhere;
+}
+
+.show-card-location strong {
+  color: var(--am-text);
+  font-size: 12px;
+}
+
+.show-card-action {
+  display: block;
+  width: 100%;
+  margin-top: auto;
+  text-align: center;
 }
 
 .item-detail-image {
@@ -336,6 +450,34 @@ main {
 
   .landing-intro {
     margin-top: 32px;
+  }
+
+  .discover-page {
+    padding-top: 24px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .discover-header {
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+
+  .discover-count {
+    gap: 6px;
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .discover-count strong {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 399.98px) {
+  .discover-header {
+    flex-direction: column;
   }
 }
 
