@@ -1,19 +1,18 @@
 export default {
   name: 'navbar-component',
   template: /* html */ `
-    <nav class="navbar sticky-top bg-white border-bottom px-3">
-      <span class="navbar-brand mb-0 h1"><i class="bi bi-bootstrap-fill me-2"></i>Mustafa's Web App</span>
+    <nav class="app-navbar sticky-top" aria-label="Main navigation">
+      <div class="app-navbar-inner">
+        <router-link class="app-brand" to="/" aria-label="AutoMeet home">
+          <i class="bi bi-car-front-fill app-brand-icon" aria-hidden="true"></i>
+          <span>AutoMeet</span>
+        </router-link>
 
-      <div class="ms-auto d-flex gap-2">
-        <router-link class="btn btn-outline-primary btn-sm" to="/">
-          <i class="bi bi-house me-1"></i>Home
-        </router-link>
-        <router-link class="btn btn-outline-primary btn-sm d-flex align-items-center" to="/items">
-          <i class="bi bi-card-list me-1"></i>Items
-        </router-link>
-        <router-link class="btn btn-outline-primary btn-sm" to="/about">
-          <i class="bi bi-info-circle me-1"></i>About
-        </router-link>
+        <div class="app-nav-links">
+          <router-link class="app-nav-link" to="/">Home</router-link>
+          <router-link class="app-nav-link" to="/items">Discover</router-link>
+          <router-link class="app-nav-link" to="/about">About AutoMeet</router-link>
+        </div>
       </div>
     </nav>
   `,
