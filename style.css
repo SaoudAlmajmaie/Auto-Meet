@@ -257,6 +257,126 @@ main {
   color: #fff;
 }
 
+.auth-page {
+  padding: 48px 0 56px;
+}
+
+.auth-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.auth-card {
+  padding: 32px;
+  border: 1px solid var(--am-border);
+  border-radius: calc(var(--am-radius) + 4px);
+  background: var(--am-surface);
+  box-shadow: 0 12px 28px rgb(17 28 40 / 8%);
+}
+
+.auth-intro-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: linear-gradient(180deg, rgb(31 78 121 / 8%), rgb(31 78 121 / 2%));
+}
+
+.auth-intro-card h1 {
+  margin-bottom: 12px;
+}
+
+.auth-intro-card p {
+  color: var(--am-muted);
+  margin-bottom: 0;
+}
+
+.auth-feature-list {
+  margin: 24px 0 0;
+  padding-left: 18px;
+  color: var(--am-text);
+  font-weight: 600;
+}
+
+.auth-feature-list li + li {
+  margin-top: 10px;
+}
+
+.auth-header h2 {
+  margin-bottom: 24px;
+}
+
+.auth-field {
+  margin-bottom: 18px;
+}
+
+.auth-field label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 700;
+  color: var(--am-text);
+}
+
+.auth-field input {
+  width: 100%;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1px solid var(--am-border);
+  border-radius: var(--am-radius);
+  background: #fff;
+  color: var(--am-text);
+  transition: border-color 140ms ease, box-shadow 140ms ease;
+}
+
+.auth-field input:focus {
+  border-color: var(--am-primary);
+  box-shadow: 0 0 0 3px rgb(31 78 121 / 12%);
+  outline: none;
+}
+
+.auth-submit-btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.auth-status {
+  margin: 18px 0 0;
+  padding: 12px 14px;
+  border-radius: var(--am-radius);
+  font-weight: 600;
+}
+
+.auth-status-success {
+  background: rgb(25 135 84 / 10%);
+  border: 1px solid rgb(25 135 84 / 25%);
+  color: #146c43;
+}
+
+.auth-status-error {
+  background: rgb(220 53 69 / 10%);
+  border: 1px solid rgb(220 53 69 / 20%);
+  color: #b42318;
+}
+
+.auth-switch {
+  margin: 22px 0 0;
+  color: var(--am-muted);
+  text-align: center;
+}
+
+.auth-link {
+  color: var(--am-primary);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.auth-link:hover,
+.auth-link:focus-visible {
+  color: var(--am-primary-dark);
+  text-decoration: underline;
+}
+
 .card {
   border: 1px solid var(--am-border) !important;
   border-radius: var(--am-radius);

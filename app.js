@@ -3,6 +3,7 @@ import AboutPageComponent from './components/about-page-component.js';
 import NavbarComponent from './components/navbar-component.js';
 import CollectionPageComponent from './components/collection-page-component.js';
 import ItemDetailPageComponent from './components/item-detail-page-component.js';
+import AuthPageComponent from './components/auth-page-component.js';
 
 const routes = [
   {
@@ -21,6 +22,16 @@ const routes = [
     path: '/items/:id',
     component: ItemDetailPageComponent,
   },
+  {
+    path: '/login',
+    component: AuthPageComponent,
+    props: { mode: 'login' },
+  },
+  {
+    path: '/signup',
+    component: AuthPageComponent,
+    props: { mode: 'signup' },
+  },
 ];
 
 const router = VueRouter.createRouter({
@@ -36,7 +47,7 @@ const app = Vue.createApp({
       error: '',
     });
 
-    fetch('items-template.csv')
+    fetch('items-template.csv?v=20260930-authfix')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Could not load CSV data file.');

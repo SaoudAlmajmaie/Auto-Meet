@@ -11,7 +11,8 @@ export default {
             <router-link to="/items" class="btn btn-primary">
               <i class="bi bi-compass me-2" aria-hidden="true"></i>Explore car shows
             </router-link>
-            <router-link to="/about" class="btn btn-outline-primary">About AutoMeet</router-link>
+            <router-link to="/login" class="btn btn-outline-primary">Login</router-link>
+            <router-link to="/signup" class="btn btn-outline-primary">Sign Up</router-link>
           </div>
         </div>
 
