@@ -16,13 +16,17 @@
 | T8 | Add date and location filtering to the car-show listing only if it is confirmed as a requirement in the specification. | ADR-00, ADR-01 | T5 | Done |
 | T9 | Build the signup and login interface using placeholder behavior only, with no real authentication yet | R1, R2, ADR-01 | T2 | Done |
 | T10 | Build the front-end registration or RSVP interaction for a logged-in user on the car-show detail view | R5, R8 | T7, T9 | Done |
-| T11 | Prevent or visually handle duplicate event registration attempts in the prototype before backend validation is added | R6, ADR-03 | T10 | Not started |
+| T11 | Prevent or visually handle duplicate event registration attempts in the prototype before backend validation is added | R6, ADR-03 | T10 | Done |
 | T12 | Build the registered-events view so a user can see the car shows they already registered for | R7 | T10 | Not started |
 | T13 | Confirm navigation between the main AutoMeet screens works correctly across listings, details, login, signup, and registered-events views | R3, R4, R5, R7, ADR-01 | T5, T7, T9, T12 | Not started |
 | T14 | Review the prototype for responsive design, usability, and accessibility issues and correct any obvious problems | R3, R4, R5, R7, R9 | T5, T7, T9, T12 | Not started |
 | T15 | Compare the completed front-end prototype to the specification and resolve any missing or inconsistent requirements before moving to backend integration | R1, R2, R3, R4, R5, R6, R7, R8, R9, ADR-00, ADR-01, ADR-02, ADR-03 | T13, T14 | Not started |
 
 **Status values:** Not started · In progress · Done · Blocked
+
+## T11 Review — 2026-09-30
+
+- **Duplicate registration check:** The front-end prototype was tested by registering for a car show and then attempting the same registration again. The second attempt was prevented and the interface displayed an "Already registered" message instead of allowing another registration.
 
 ## T1 Review — 2026-09-28
 

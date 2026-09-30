@@ -2,6 +2,7 @@ export default {
   name: 'item-detail-page-component',
   setup() {
     const itemsStore = Vue.inject('itemsStore');
+    const registrationStore = Vue.inject('registrationStore');
     const route = VueRouter.useRoute();
     const formatDate = (dateString) => {
       if (!dateString) {
@@ -25,10 +26,45 @@ export default {
       return itemsStore.items.find((item) => item.id === route.params.id);
     });
 
+    const isRegisteredForCurrentItem = Vue.computed(() => {
+      return selectedItem.value && registrationStore.registeredItemIds.includes(selectedItem.value.id);
+    });
+
+    const registerForCurrentItem = () => {
+      if (!selectedItem.value) {
+        return;
+      }
+
+      if (!registrationStore.isLoggedIn) {
+        registrationStore.notice = {
+          type: 'warning',
+          message: 'Please log in to register for this car show.',
+        };
+        return;
+      }
+
+      if (registrationStore.registeredItemIds.includes(selectedItem.value.id)) {
+        registrationStore.notice = {
+          type: 'warning',
+          message: `You are already registered for "${selectedItem.value.title}".`,
+        };
+        return;
+      }
+
+      registrationStore.registeredItemIds.push(selectedItem.value.id);
+      registrationStore.notice = {
+        type: 'success',
+        message: `You are registered for "${selectedItem.value.title}".`,
+      };
+    };
+
     return {
       itemsStore,
+      registrationStore,
       selectedItem,
       formatDate,
+      isRegisteredForCurrentItem,
+      registerForCurrentItem,
     };
   },
   template: /* html */ `
@@ -83,6 +119,35 @@ export default {
           <div class="item-detail-description">
             <h2 class="h5">About this show</h2>
             <p class="lead mb-0">{{ selectedItem.description || 'No description available.' }}</p>
+          </div>
+
+          <div class="item-detail-actions mt-4">
+            <button
+              v-if="!isRegisteredForCurrentItem"
+              type="button"
+              class="btn btn-primary"
+              @click="registerForCurrentItem">
+              Register for this show
+            </button>
+            <button
+              v-else
+              type="button"
+              class="btn btn-outline-primary disabled"
+              aria-disabled="true">
+              Already registered
+            </button>
+          </div>
+
+          <div v-if="isRegisteredForCurrentItem" class="mt-3 alert alert-info" role="status">
+            You are already registered for "{{ selectedItem.title }}".
+          </div>
+
+          <div
+            v-else-if="registrationStore.notice.message && registrationStore.notice.message.includes(selectedItem.title)"
+            class="mt-3 alert"
+            :class="registrationStore.notice.type === 'warning' ? 'alert-warning' : 'alert-success'"
+            role="status">
+            {{ registrationStore.notice.message }}
           </div>
         </div>
       </article>

@@ -377,6 +377,13 @@ main {
   text-decoration: underline;
 }
 
+.item-detail-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .card {
   border: 1px solid var(--am-border) !important;
   border-radius: var(--am-radius);

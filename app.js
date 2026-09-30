@@ -1,9 +1,9 @@
-import LandingPageComponent from './components/landing-page-component.js';
-import AboutPageComponent from './components/about-page-component.js';
-import NavbarComponent from './components/navbar-component.js';
-import CollectionPageComponent from './components/collection-page-component.js';
-import ItemDetailPageComponent from './components/item-detail-page-component.js';
-import AuthPageComponent from './components/auth-page-component.js';
+import LandingPageComponent from './components/landing-page-component.js?v=20260930-t11';
+import AboutPageComponent from './components/about-page-component.js?v=20260930-t11';
+import NavbarComponent from './components/navbar-component.js?v=20260930-t11';
+import CollectionPageComponent from './components/collection-page-component.js?v=20260930-t11';
+import ItemDetailPageComponent from './components/item-detail-page-component.js?v=20260930-t11';
+import AuthPageComponent from './components/auth-page-component.js?v=20260930-t11';
 
 const routes = [
   {
@@ -47,7 +47,16 @@ const app = Vue.createApp({
       error: '',
     });
 
-    fetch('items-template.csv?v=20260930-authfix')
+    const registrationStore = Vue.reactive({
+      isLoggedIn: true,
+      registeredItemIds: [],
+      notice: {
+        type: '',
+        message: '',
+      },
+    });
+
+    fetch('items-template.csv?v=20260930-t11')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Could not load CSV data file.');
@@ -98,6 +107,7 @@ const app = Vue.createApp({
       });
 
     Vue.provide('itemsStore', itemsStore);
+    Vue.provide('registrationStore', registrationStore);
 
     return {};
   },
