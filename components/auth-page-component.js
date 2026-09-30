@@ -146,7 +146,7 @@ export default {
               {{ submitLabel }}
             </button>
 
-            <p v-if="statusMessage" class="auth-status" :class="statusClassName">
+            <p v-if="statusMessage" class="auth-status" :class="statusClassName" role="status">
               {{ statusMessage }}
             </p>
           </form>

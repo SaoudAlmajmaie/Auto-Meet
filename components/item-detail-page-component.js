@@ -133,6 +133,7 @@ export default {
               v-else
               type="button"
               class="btn btn-outline-primary disabled"
+              disabled
               aria-disabled="true">
               Already registered
             </button>
