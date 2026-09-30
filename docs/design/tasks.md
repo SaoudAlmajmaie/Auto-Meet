@@ -13,7 +13,7 @@
 | T5 | Adapt the main event listing view so users can browse available car shows in a clean, scannable layout | R3 | T2, T4 | Done |
 | T6 | Ensure each event listing clearly displays the title, date, location, and image for quick browsing decisions | R3, R4 | T5 | Done |
 | T7 | Build or adapt the car-show detail view so users can inspect the full information for a selected event | R4 | T5 | Done |
-| T8 | Add date and location filtering to the car-show listing only if it is confirmed as a requirement in the specification. | ADR-00, ADR-01 | T5 | Not started |
+| T8 || T8 | Add date and location filtering to the car-show listing only if it is confirmed as a requirement in the specification. | ADR-00, ADR-01 | T5 | Done |
 | T9 | Build the signup and login interface using placeholder behavior only, with no real authentication yet | R1, R2, ADR-01 | T2 | Not started |
 | T10 | Build the front-end registration or RSVP interaction for a logged-in user on the car-show detail view | R5, R8 | T7, T9 | Not started |
 | T11 | Prevent or visually handle duplicate event registration attempts in the prototype before backend validation is added | R6, ADR-03 | T10 | Not started |
