@@ -18,7 +18,7 @@
 | T10 | Build the front-end registration or RSVP interaction for a logged-in user on the car-show detail view | R5, R8 | T7, T9 | Done |
 | T11 | Prevent or visually handle duplicate event registration attempts in the prototype before backend validation is added | R6, ADR-03 | T10 | Done |
 | T12 | Build the registered-events view so a user can see the car shows they already registered for | R7 | T10 | Done |
-| T13 | Confirm navigation between the main AutoMeet screens works correctly across listings, details, login, signup, and registered-events views | R3, R4, R5, R7, ADR-01 | T5, T7, T9, T12 | Not started |
+| T13 | Confirm navigation between the main AutoMeet screens works correctly across listings, details, login, signup, and registered-events views | R3, R4, R5, R7, ADR-01 | T5, T7, T9, T12 | Done |
 | T14 | Review the prototype for responsive design, usability, and accessibility issues and correct any obvious problems | R3, R4, R5, R7, R9 | T5, T7, T9, T12 | Not started |
 | T15 | Compare the completed front-end prototype to the specification and resolve any missing or inconsistent requirements before moving to backend integration | R1, R2, R3, R4, R5, R6, R7, R8, R9, ADR-00, ADR-01, ADR-02, ADR-03 | T13, T14 | Not started |
 
@@ -31,6 +31,10 @@
 ## T12 Review — 2026-09-30
 
 - **Registered-events view:** The page was tested in the browser on the registered-events route and displayed the placeholder saved shows using the existing AutoMeet card layout. The view successfully lists the user's registered car shows and keeps the design consistent with the rest of the prototype.
+
+## T13 Review — 2026-09-30
+
+- **Navigation check:** Browser testing confirmed the Discover listing, a car-show detail page, Login, Sign Up, and Registered Events all open correctly from the shared navigation or listing link. Each displayed the expected page content.
 
 ## T1 Review — 2026-09-28
 
