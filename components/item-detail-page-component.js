@@ -3,6 +3,23 @@ export default {
   setup() {
     const itemsStore = Vue.inject('itemsStore');
     const route = VueRouter.useRoute();
+    const formatDate = (dateString) => {
+      if (!dateString) {
+        return 'Date to be announced';
+      }
+
+      const [year, month, day] = dateString.split('-').map(Number);
+      const date = new Date(Date.UTC(year, month - 1, day));
+
+      return Number.isNaN(date.getTime())
+        ? 'Date to be announced'
+        : new Intl.DateTimeFormat('en-US', {
+            month: 'short',
+            day: 'numeric',
+            year: 'numeric',
+            timeZone: 'UTC',
+          }).format(date);
+    };
 
     const selectedItem = Vue.computed(() => {
       return itemsStore.items.find((item) => item.id === route.params.id);
@@ -11,6 +28,7 @@ export default {
     return {
       itemsStore,
       selectedItem,
+      formatDate,
     };
   },
   template: /* html */ `
@@ -31,9 +49,9 @@ export default {
 
       <article v-else class="card shadow-sm border-0 overflow-hidden">
         <img
-          v-if="selectedItem.imageUrl"
-          :src="selectedItem.imageUrl"
-          :alt="selectedItem.name"
+          v-if="selectedItem.image"
+          :src="selectedItem.image"
+          :alt="selectedItem.title"
           class="item-detail-image w-100 object-fit-cover" />
         <div
           v-else
@@ -42,13 +60,30 @@ export default {
         </div>
 
         <div class="card-body p-4">
-          <div class="d-flex align-items-center gap-2 mb-2">
-            <h1 class="h3 mb-0">{{ selectedItem.name }}</h1>
+          <div class="item-detail-heading">
+            <h1 class="h3 mb-0">{{ selectedItem.title }}</h1>
             <span class="badge text-bg-primary">{{ selectedItem.category || 'General' }}</span>
           </div>
 
-          <p class="lead mb-3">{{ selectedItem.description || 'No description available.' }}</p>
-          <p class="mb-0"><strong>Location:</strong> {{ selectedItem.location || 'To be announced' }}</p>
+          <dl class="item-detail-meta">
+            <div>
+              <dt><i class="bi bi-calendar-event" aria-hidden="true"></i> Date</dt>
+              <dd><time :datetime="selectedItem.date">{{ formatDate(selectedItem.date) }}</time></dd>
+            </div>
+            <div>
+              <dt><i class="bi bi-clock" aria-hidden="true"></i> Time</dt>
+              <dd>{{ selectedItem.time || 'Time to be announced' }}</dd>
+            </div>
+            <div>
+              <dt><i class="bi bi-geo-alt" aria-hidden="true"></i> Location</dt>
+              <dd>{{ selectedItem.location || 'To be announced' }}</dd>
+            </div>
+          </dl>
+
+          <div class="item-detail-description">
+            <h2 class="h5">About this show</h2>
+            <p class="lead mb-0">{{ selectedItem.description || 'No description available.' }}</p>
+          </div>
         </div>
       </article>
     </section>

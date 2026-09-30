@@ -400,7 +400,75 @@ main {
 }
 
 .item-detail-image {
+  display: block;
+  aspect-ratio: 8 / 5;
+  background: #e8edf2;
   max-height: 400px;
+}
+
+.item-detail-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.item-detail-heading h1 {
+  min-width: 0;
+}
+
+.item-detail-heading .badge {
+  flex: 0 0 auto;
+  max-width: 42%;
+  white-space: normal;
+  text-align: center;
+}
+
+.item-detail-meta {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 0 0 28px;
+  padding: 20px 0;
+  border-top: 1px solid var(--am-border);
+  border-bottom: 1px solid var(--am-border);
+}
+
+.item-detail-meta div {
+  min-width: 0;
+}
+
+.item-detail-meta dt {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  color: var(--am-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.item-detail-meta dt i {
+  color: var(--am-secondary);
+  font-size: 16px;
+}
+
+.item-detail-meta dd {
+  margin: 0;
+  color: var(--am-muted);
+  overflow-wrap: anywhere;
+}
+
+.item-detail-description h2 {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 767.98px) {
+  .item-detail-meta {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 
 .badge.text-bg-primary {
