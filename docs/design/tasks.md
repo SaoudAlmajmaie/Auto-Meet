@@ -20,7 +20,7 @@
 | T12 | Build the registered-events view so a user can see the car shows they already registered for | R7 | T10 | Done |
 | T13 | Confirm navigation between the main AutoMeet screens works correctly across listings, details, login, signup, and registered-events views | R3, R4, R5, R7, ADR-01 | T5, T7, T9, T12 | Done |
 | T14 | Review the prototype for responsive design, usability, and accessibility issues and correct any obvious problems | R3, R4, R5, R7, R9 | T5, T7, T9, T12 | Done |
-| T15 | Compare the completed front-end prototype to the specification and resolve any missing or inconsistent requirements before moving to backend integration | R1, R2, R3, R4, R5, R6, R7, R8, R9, ADR-00, ADR-01, ADR-02, ADR-03 | T13, T14 | Not started |
+| T15 | Compare the completed front-end prototype to the specification and resolve any missing or inconsistent requirements before moving to backend integration | R1, R2, R3, R4, R5, R6, R7, R8, R9, ADR-00, ADR-01, ADR-02, ADR-03 | T13, T14 | Done |
 
 **Status values:** Not started · In progress · Done · Blocked
 
@@ -39,6 +39,10 @@
 ## T14 Review — 2026-09-30
 
 - **Responsive and accessibility check:** Tested the main screens at 320, 375, 768, and 1280 px with no horizontal overflow; checked headings, form labels, and image alt text. Added a live status role to auth feedback and native disabled behavior to the already-registered button.
+
+## T15 Review — 2026-09-30
+
+- **Specification comparison:** Verified listing/detail information, signup validation, and the logged-out, registration, duplicate, and registered-events flows. Corrected invalid email acceptance, the default signed-in state, missing logged-out messaging/gating, and the success notice being replaced by an already-registered message. Signup and login remain nonpersistent placeholders; actual account creation, credential verification, and secure authorization for R1, R2, and R9 remain backend integration requirements.
 
 ## T1 Review — 2026-09-28
 

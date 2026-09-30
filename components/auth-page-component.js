@@ -6,6 +6,7 @@ export default {
       default: 'login',
     },
   },
+  inject: ['registrationStore'],
   data() {
     return {
       form: {
@@ -62,6 +63,8 @@ export default {
           return;
         }
 
+        this.registrationStore.isLoggedIn = true;
+        this.registrationStore.notice = { type: '', message: '' };
         this.statusType = 'success';
         this.statusMessage = 'Placeholder login: authentication is not connected yet.';
         return;
@@ -70,6 +73,12 @@ export default {
       if (!this.form.name.trim() || !this.form.username.trim() || !this.form.email.trim() || !this.form.password.trim() || !this.form.confirmPassword.trim()) {
         this.statusType = 'error';
         this.statusMessage = 'Please complete every field before continuing.';
+        return;
+      }
+
+      if (!event.currentTarget.querySelector('#signup-email').checkValidity()) {
+        this.statusType = 'error';
+        this.statusMessage = 'Please enter a valid email address.';
         return;
       }
 

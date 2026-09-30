@@ -105,9 +105,12 @@ h2 {
   padding: 8px 12px;
   border: 1px solid transparent;
   border-radius: var(--am-radius);
+  background: transparent;
   color: #fff;
   font-size: 15px;
+  font-family: inherit;
   text-decoration: none;
+  cursor: pointer;
   transition: background-color 140ms ease, border-color 140ms ease;
 }
 

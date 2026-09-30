@@ -1,10 +1,10 @@
 import LandingPageComponent from './components/landing-page-component.js?v=20260930-t11';
 import AboutPageComponent from './components/about-page-component.js?v=20260930-t11';
-import NavbarComponent from './components/navbar-component.js?v=20260930-t11';
+import NavbarComponent from './components/navbar-component.js?v=20260930-t15';
 import CollectionPageComponent from './components/collection-page-component.js?v=20260930-t11';
-import ItemDetailPageComponent from './components/item-detail-page-component.js?v=20260930-t14';
-import AuthPageComponent from './components/auth-page-component.js?v=20260930-t14';
-import RegisteredEventsPageComponent from './components/registered-events-page-component.js?v=20260930-t12';
+import ItemDetailPageComponent from './components/item-detail-page-component.js?v=20260930-t15a';
+import AuthPageComponent from './components/auth-page-component.js?v=20260930-t15';
+import RegisteredEventsPageComponent from './components/registered-events-page-component.js?v=20260930-t15';
 
 const routes = [
   {
@@ -53,7 +53,7 @@ const app = Vue.createApp({
     });
 
     const registrationStore = Vue.reactive({
-      isLoggedIn: true,
+      isLoggedIn: false,
       registeredItemIds: ['autumn-classics-meet', 'coastal-cruise-in'],
       notice: {
         type: '',

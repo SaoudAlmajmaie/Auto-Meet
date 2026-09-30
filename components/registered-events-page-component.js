@@ -59,6 +59,10 @@ export default {
         {{ itemsStore.error }}
       </div>
 
+      <div v-else-if="!registrationStore.isLoggedIn" class="alert alert-warning" role="status">
+        Please <router-link to="/login">log in</router-link> to view your registered car shows.
+      </div>
+
       <div v-else-if="registeredItems.length === 0" class="alert alert-info" role="status">
         You haven’t registered for any car shows yet. <router-link to="/items">Browse available shows</router-link> to get started.
       </div>

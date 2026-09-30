@@ -38,7 +38,7 @@ export default {
       if (!registrationStore.isLoggedIn) {
         registrationStore.notice = {
           type: 'warning',
-          message: 'Please log in to register for this car show.',
+          message: `Please log in to register for "${selectedItem.value.title}".`,
         };
         return;
       }
@@ -139,16 +139,16 @@ export default {
             </button>
           </div>
 
-          <div v-if="isRegisteredForCurrentItem" class="mt-3 alert alert-info" role="status">
-            You are already registered for "{{ selectedItem.title }}".
-          </div>
-
           <div
-            v-else-if="registrationStore.notice.message && registrationStore.notice.message.includes(selectedItem.title)"
+            v-if="registrationStore.notice.message && registrationStore.notice.message.includes(selectedItem.title)"
             class="mt-3 alert"
             :class="registrationStore.notice.type === 'warning' ? 'alert-warning' : 'alert-success'"
             role="status">
             {{ registrationStore.notice.message }}
+          </div>
+
+          <div v-else-if="isRegisteredForCurrentItem" class="mt-3 alert alert-info" role="status">
+            You are already registered for "{{ selectedItem.title }}".
           </div>
         </div>
       </article>
