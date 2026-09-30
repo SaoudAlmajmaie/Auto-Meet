@@ -11,7 +11,7 @@
 | T3 | Adapt the placeholder data model to support the required car-show information: title, date, time, location, description, image, and event type/category where relevant | ADR-00, R3, R4 | T1 | Done |
 | T4 | Add realistic placeholder car-show data for use across the front-end prototype | R3, R4 | T3 | Done |
 | T5 | Adapt the main event listing view so users can browse available car shows in a clean, scannable layout | R3 | T2, T4 | Done |
-| T6 | Ensure each event listing clearly displays the title, date, location, and image for quick browsing decisions | R3, R4 | T5 | Not started |
+| T6 | Ensure each event listing clearly displays the title, date, location, and image for quick browsing decisions | R3, R4 | T5 | Done |
 | T7 | Build or adapt the car-show detail view so users can inspect the full information for a selected event | R4 | T5 | Not started |
 | T8 | Add date and location filtering to the car-show listing only if it is confirmed as a requirement in the specification. | ADR-00, ADR-01 | T5 | Not started |
 | T9 | Build the signup and login interface using placeholder behavior only, with no real authentication yet | R1, R2, ADR-01 | T2 | Not started |
