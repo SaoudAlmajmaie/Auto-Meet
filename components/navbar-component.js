@@ -11,6 +11,7 @@ export default {
         <div class="app-nav-links">
           <router-link class="app-nav-link" to="/">Home</router-link>
           <router-link class="app-nav-link" to="/items">Discover</router-link>
+          <router-link class="app-nav-link" to="/registered-events">My Shows</router-link>
           <router-link class="app-nav-link" to="/about">About AutoMeet</router-link>
           <router-link class="app-nav-link" to="/login">Login</router-link>
           <router-link class="app-nav-link" to="/signup">Sign Up</router-link>

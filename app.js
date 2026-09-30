@@ -4,6 +4,7 @@ import NavbarComponent from './components/navbar-component.js?v=20260930-t11';
 import CollectionPageComponent from './components/collection-page-component.js?v=20260930-t11';
 import ItemDetailPageComponent from './components/item-detail-page-component.js?v=20260930-t11';
 import AuthPageComponent from './components/auth-page-component.js?v=20260930-t11';
+import RegisteredEventsPageComponent from './components/registered-events-page-component.js?v=20260930-t12';
 
 const routes = [
   {
@@ -32,6 +33,10 @@ const routes = [
     component: AuthPageComponent,
     props: { mode: 'signup' },
   },
+  {
+    path: '/registered-events',
+    component: RegisteredEventsPageComponent,
+  },
 ];
 
 const router = VueRouter.createRouter({
@@ -49,7 +54,7 @@ const app = Vue.createApp({
 
     const registrationStore = Vue.reactive({
       isLoggedIn: true,
-      registeredItemIds: [],
+      registeredItemIds: ['autumn-classics-meet', 'coastal-cruise-in'],
       notice: {
         type: '',
         message: '',
